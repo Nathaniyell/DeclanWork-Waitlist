@@ -16,6 +16,10 @@ export default function Home() {
       <section className="bg-green-600 mt-8">
 
       <label htmlFor="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" placeholder="John" required />
+
+      <label htmlFor="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" placeholder="John" required />
       </section>
     </form>
     {/* <div className="bg-[#EDFCF6]">
