@@ -5,7 +5,11 @@ import { useState } from "react";
 
 
 export default function Home() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    firstName: '',
+    lastName: '',
+    email: '',
+  }> ({
     firstName: '',
     lastName: '',
     email: '',
