@@ -39,7 +39,7 @@ export default function Home() {
       <Image
         src={logo}
         alt="Logo"
-        className="absolute inline left-10 top-4 md:left-20"
+        className="absolute inline left-10 top-4 md:left-20 z-0"
       />
       {formIsSubmitted && (
         <p
