@@ -5,10 +5,10 @@ import mockup from "../../public/assets/Images/mockup.png";
 export default function Home() {
   return (
     <main className="min-h-screen relative">
-      <Image src={logo} alt="Logo" className="absolute inline left-10 top-4" />
+      <Image src={logo} alt="Logo" className="absolute inline left-10 top-4 md:left-20" />
       <div className="flex items-center justify-between flex-col lg:flex-row bg-white">
-        <form action="" className="p-8 flex-1 relative top-20 md:top-10 lg:top-6 mb-10">
-          <div className="flex items-start justify-between flex-col h-[150px] md:h-[120px] bg-white">
+        <form action="" className="p-8 flex-1 relative top-20 md:top-14 lg:top-8 mb-10">
+          <div className="flex items-start justify-between flex-col h-[150px] md:h-[100px] lg:md:h-[120px] bg-white">
             <span className="bg-[#1671D9] text-white p-1 text-sm rounded-lg md:text-xs">
               Coming soon
             </span>
@@ -55,9 +55,9 @@ export default function Home() {
             Join Waitlist
           </button>
         </form>
-        <div className="mt-10 bg-[#EDFCF6] md:block w-full lg:w-3/5 lg:h-screen relative">
+        <div className="hidden bg-[#EDFCF6] lg:block lg:w-[55%] lg:h-screen relative">
           
-      <Image src={mockup} alt="Mock up" className="lg:h-[85%]" />
+      <Image src={mockup} alt="Mock up" className="h-[85%] absolute right-0 bottom-0" />
     </div>
       </div>
     </main>
