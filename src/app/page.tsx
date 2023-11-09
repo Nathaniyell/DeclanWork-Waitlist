@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import logo from "../../public/assets/Images/logo.png";
 import mockup from "../../public/assets/Images/mockup.png";
