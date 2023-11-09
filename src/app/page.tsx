@@ -74,7 +74,7 @@ export default function Home() {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="John"
-                className="border border-black p-2 w-full indent-1 mt-2 outline-[#00D37B] outline-1"
+                className="rounded-md border border-slate-400 p-2 w-full indent-1 mt-2 outline-[#00D37B] outline-1"
                 required
               />
             </div>
@@ -87,7 +87,7 @@ export default function Home() {
                 value={formData.lastName}
                 onChange={handleChange}
                 placeholder="Doe"
-                className="border border-black p-2 w-full indent-1 mt-2 outline-[#00D37B] outline-1"
+                className="rounded-md border border-slate-400 p-2 w-full indent-1 mt-2 outline-[#00D37B] outline-1"
                 required
               />
             </div>
@@ -102,10 +102,10 @@ export default function Home() {
             value={formData.email}
             onChange={handleChange}
             placeholder="johndoe@example.com"
-            className="border border-black p-2  indent-2 w-full mt-2 outline-[#00D37B] outline-1"
+            className="border rounded-md border-slate-400 p-2  indent-2 w-full mt-2 outline-[#00D37B] outline-1"
             required
           />
-          <button type="submit" className="bg-[#00D37B] w-full p-3 mt-8">
+          <button type="submit" className="rounded-md bg-[#00D37B] w-full p-3 mt-8">
             Join Waitlist
           </button>
         </form>
