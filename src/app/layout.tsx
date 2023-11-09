@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description: 'Join out wait list to get notified when we launch',
 }
 
+
 export default function RootLayout({
   children,
 }: {
