@@ -43,7 +43,7 @@ export default function Home() {
       />
       {formIsSubmitted && (
         <p
-          className={`bg-[#0D5EBA] text-center transition-all ease-in py-2 z-10 text-white`}
+          className={`bg-[#0D5EBA] text-center transition-all ease-in py-1 md:py-2 z-10 text-white relative`}
         >
           Congratulations, you have been add to our waitlist. A mail has been
           sent to your inbox
