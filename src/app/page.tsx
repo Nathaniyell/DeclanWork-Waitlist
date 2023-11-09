@@ -7,7 +7,7 @@ export default function Home() {
     <main className="min-h-screen relative">
       <Image src={logo} alt="Logo" className="absolute inline left-10 top-4" />
       <div className="flex items-center justify-between flex-col md:flex-row bg-white">
-        <form action="" className="p-8 flex-1 relative top-20 md:top-20 lg:-top-16">
+        <form action="" className="p-8 flex-1 relative top-20 md:top-10 lg:top-6">
           <div className="flex items-start justify-between flex-col h-[120px] bg-white">
             <span className="bg-[#1671D9] text-white p-1 rounded-lg text-sm">
               Coming soon
@@ -55,9 +55,9 @@ export default function Home() {
             Join Waitlist
           </button>
         </form>
-        <div className="hidden bg-[#EDFCF6] md:block md:w-1/2 h-screen relative">
+        <div className="hidden bg-[#EDFCF6] md:block md:w-2/5 h-screen relative">
           
-      <Image src={mockup} alt="Mock up" className=" absolute bottom-0" />
+      <Image src={mockup} alt="Mock up" className="h-5/6 lg:h-[85%] absolute bottom-0" />
     </div>
       </div>
     </main>
