@@ -18,7 +18,7 @@ export default function Home() {
               version
             </p>
           </div>
-          <section className="bg-green-600 mt-8 flex items-center justify-between w-11/12">
+          <section className="mt-8 flex items-center justify-between w-full gap-8 mb-4">
             <div>
               <label htmlFor="firstName">First Name</label>
               <input
@@ -26,6 +26,7 @@ export default function Home() {
                 id="firstName"
                 name="firstName"
                 placeholder="John"
+                className="border p-2 w-full indent-1 mt-2 outline-[#00D37B] outline-1"
                 required
               />
             </div>
@@ -36,25 +37,27 @@ export default function Home() {
                 id="lastName"
                 name="lastName"
                 placeholder="Doe"
+                className="border p-2 w-full indent-1 mt-2 outline-[#00D37B] outline-1"
                 required
               />
             </div>
           </section>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="block">Email</label>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="John"
+            placeholder="johndoe@example.com"
+            className="border p-2 w-full indent-2 mt-2 outline-[#00D37B] outline-1"
             required
           />
-          <button type="submit" className="bg-[#00D37B] w-full p-3">
+          <button type="submit" className="bg-[#00D37B] w-full p-3 mt-8">
             Join Waitlist
           </button>
         </form>
-        {/* <div className="bg-[#EDFCF6]">
+        <div className="bg-[#EDFCF6]">
       <Image src={mockup} alt="Mock up" className="" />
-    </div> */}
+    </div>
       </div>
     </main>
   );
