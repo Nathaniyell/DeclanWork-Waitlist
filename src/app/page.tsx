@@ -1,20 +1,20 @@
-"use client"
+"use client";
 import Image from "next/image";
 import logo from "../../public/assets/Images/logo.png";
 import mockup from "../../public/assets/Images/mockup.png";
 import { useState } from "react";
 
-
 export default function Home() {
   const [formData, setFormData] = useState<{
-    firstName: '',
-    lastName: '',
-    email: '',
-  }> ({
-    firstName: '',
-    lastName: '',
-    email: '',
+    firstName: "";
+    lastName: "";
+    email: "";
+  }>({
+    firstName: "",
+    lastName: "",
+    email: "",
   });
+  const [formIsSubmitted, setFormIsSubmitted] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -26,18 +26,36 @@ export default function Home() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData)
+    console.log(formData);
     setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-    })
+      firstName: "",
+      lastName: "",
+      email: "",
+    });
+    setFormIsSubmitted(true);
   };
   return (
     <main className="min-h-screen relative">
-      <Image src={logo} alt="Logo" className="absolute inline left-10 top-4 md:left-20" />
+      <Image
+        src={logo}
+        alt="Logo"
+        className="absolute inline left-10 top-4 md:left-20"
+      />
+      {formIsSubmitted && (
+        <p
+          className={`bg-[#1671D9] text-center transition-all ease-in  text-white ${
+            formIsSubmitted ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          Congratulations, you have been add to our waitlist. A mail has been
+          sent to your inbox
+        </p>
+      )}
       <div className="flex items-center justify-between flex-col lg:flex-row bg-white">
-        <form onSubmit={handleFormSubmit} className="p-8 flex-1 relative top-20 md:top-14 lg:top-8 mb-10">
+        <form
+          onSubmit={handleFormSubmit}
+          className="p-8 flex-1 relative top-20 md:top-14 lg:top-8 mb-10"
+        >
           <div className="flex items-start justify-between flex-col h-[150px] md:h-[100px] lg:md:h-[120px] bg-white">
             <span className="bg-[#1671D9] text-white p-1 text-sm rounded-lg md:text-xs">
               Coming soon
@@ -57,7 +75,6 @@ export default function Home() {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-
                 placeholder="John"
                 className="border border-black p-2 w-full indent-1 mt-2 outline-[#00D37B] outline-1"
                 required
@@ -71,21 +88,21 @@ export default function Home() {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-
                 placeholder="Doe"
                 className="border border-black p-2 w-full indent-1 mt-2 outline-[#00D37B] outline-1"
                 required
               />
             </div>
           </section>
-          <label htmlFor="email" className="block">Email</label>
+          <label htmlFor="email" className="block">
+            Email
+          </label>
           <input
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-
             placeholder="johndoe@example.com"
             className="border border-black p-2  indent-2 w-full mt-2 outline-[#00D37B] outline-1"
             required
@@ -95,9 +112,12 @@ export default function Home() {
           </button>
         </form>
         <div className="hidden bg-[#EDFCF6] lg:block lg:w-[55%] lg:h-screen relative">
-          
-      <Image src={mockup} alt="Mock up" className="h-[85%] absolute right-0 bottom-0" />
-    </div>
+          <Image
+            src={mockup}
+            alt="Mock up"
+            className="h-[85%] absolute right-0 bottom-0"
+          />
+        </div>
       </div>
     </main>
   );
