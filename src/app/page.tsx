@@ -43,9 +43,7 @@ export default function Home() {
       />
       {formIsSubmitted && (
         <p
-          className={`bg-[#1671D9] text-center transition-all ease-in  text-white ${
-            formIsSubmitted ? "opacity-100" : "opacity-0"
-          }`}
+          className={`bg-[#0D5EBA] text-center transition-all ease-in py-2 z-10 text-white`}
         >
           Congratulations, you have been add to our waitlist. A mail has been
           sent to your inbox
