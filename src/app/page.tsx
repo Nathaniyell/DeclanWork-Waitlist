@@ -7,7 +7,7 @@ export default function Home() {
     <main className="min-h-screen relative">
       <Image src={logo} alt="Logo" className="absolute inline left-10 top-4" />
       <div className="flex items-center justify-between flex-col md:flex-row bg-white">
-        <form action="" className="p-8 flex-1 relative top-20">
+        <form action="" className="p-8 flex-1 relative top-20 md:top-20 lg:-top-16">
           <div className="flex items-start justify-between flex-col h-[120px] bg-white">
             <span className="bg-[#1671D9] text-white p-1 rounded-lg text-sm">
               Coming soon
@@ -18,7 +18,7 @@ export default function Home() {
               version
             </p>
           </div>
-          <section className="mt-8 flex items-center justify-between w-full gap-8 mb-4">
+          <section className="mt-8 flex items-center justify-between w-full gap-6 mb-4">
             <div>
               <label htmlFor="firstName">First Name</label>
               <input
@@ -48,15 +48,16 @@ export default function Home() {
             id="email"
             name="email"
             placeholder="johndoe@example.com"
-            className="border border-black p-2 w-full indent-2 mt-2 outline-[#00D37B] outline-1"
+            className="border border-black p-2  indent-2 w-full mt-2 outline-[#00D37B] outline-1"
             required
           />
           <button type="submit" className="bg-[#00D37B] w-full p-3 mt-8">
             Join Waitlist
           </button>
         </form>
-        <div className="hidden md:block bg-[#EDFCF6]">
-      <Image src={mockup} alt="Mock up" className="" />
+        <div className="hidden bg-[#EDFCF6] md:block md:w-1/2 h-screen relative">
+          
+      <Image src={mockup} alt="Mock up" className=" absolute bottom-0" />
     </div>
       </div>
     </main>
