@@ -31,15 +31,19 @@ export default function Home() {
       body: JSON.stringify(formData)
     })
     const result = await request.json()
+    if(result.data === "ok"){
+      setFormIsSubmitted(true);
+      
+    }else{
+      return
+    }
 
-    
     console.log(formData);
     setFormData({
       firstName: "",
       lastName: "",
       email: "",
     });
-    setFormIsSubmitted(true);
   };
   return (
     <main className="min-h-screen relative">
