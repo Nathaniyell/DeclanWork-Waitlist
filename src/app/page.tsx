@@ -3,6 +3,8 @@ import Image from "next/image";
 import logo from "../../public/assets/Images/logo.png";
 import mockup from "../../public/assets/Images/mockup.png";
 import { useState } from "react";
+import dotenv from 'dotenv';
+
 
 export default function Home() {
   const [formData, setFormData] = useState<{
@@ -27,6 +29,7 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Submit data to Airtable
+    dotenv.config();
     const airtableRequest = await fetch("https://api.airtable.com/v0/appBSlJgneh66juRc/Waitlist", {
       method: "POST",
       headers: {
