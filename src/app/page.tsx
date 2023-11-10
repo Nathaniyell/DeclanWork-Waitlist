@@ -26,19 +26,29 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+  
     const request = await fetch("./submit", {
       method: "POST",
-      body: JSON.stringify(formData)
-    })
-    const result = await request.json()
-    if(result.data === "ok"){
+      body: JSON.stringify(formData),
+    });
+  
+    const result = await request.json();
+  
+    if (result.data === "ok") {
       setFormIsSubmitted(true);
-      
-    }else{
-      return
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+      });
+    } else {
+      return;
     }
-
+  
+    // Log the form data before clearing it.
     console.log(formData);
+  
+    // Clear the form data.
     setFormData({
       firstName: "",
       lastName: "",
