@@ -24,8 +24,15 @@ export default function Home() {
     }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const request = await fetch("./submit", {
+      method: "POST",
+      body: JSON.stringify(formData)
+    })
+    const result = await request.json()
+
+    
     console.log(formData);
     setFormData({
       firstName: "",
@@ -51,7 +58,7 @@ export default function Home() {
       )}
       <div className="flex items-center justify-between flex-col lg:flex-row bg-white">
         <form
-          onSubmit={handleFormSubmit}
+          onSubmit={handleSubmit}
           className="p-8 flex-1 relative top-20 md:top-14 lg:top-8 mb-10"
         >
           <div className="flex items-start justify-between flex-col h-[150px] md:h-[100px] lg:md:h-[120px] bg-white">

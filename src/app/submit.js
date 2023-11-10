@@ -19,5 +19,10 @@ import fetch from "node-fetch"
         },
         body:JSON.stringify({fields: {firstName, lastName, email}})
     });
+
+    if(request.ok){
+      return res.status(200).json({data: "ok"})
+    }
+    return res.status(400).json({error: "error returned"})
   }
   
