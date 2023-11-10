@@ -26,34 +26,30 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
-    const request = await fetch("./submit", {
+    // Submit data to Airtable
+    const airtableRequest = await fetch("https://api.airtable.com/v0/appBSlJgneh66juRc/Waitlist", {
       method: "POST",
-      body: JSON.stringify(formData),
+      headers: {
+        Authorization: `Bearer ${process.env.AIRTABLE_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ fields: formData }),
     });
-  
-    const result = await request.json();
-  
-    if (result.data === "ok") {
+
+    // Handle the response from Airtable
+    const airtableResult = await airtableRequest.json();
+
+    if (airtableResult.data === "ok") {
       setFormIsSubmitted(true);
+
+      // Clear the form data
       setFormData({
         firstName: "",
         lastName: "",
         email: "",
       });
-    } else {
-      return;
     }
-  
-     console.log(formData);
-  
-    // Clear the form data.
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-    });
-  };
+  }
   return (
     <main className="min-h-screen relative">
       <Image
