@@ -44,6 +44,7 @@ export default function Home() {
 
     if (airtableResult.data === "ok") {
       setFormIsSubmitted(true);
+      console.log("request sent")
 
       // Clear the form data
       setFormData({
