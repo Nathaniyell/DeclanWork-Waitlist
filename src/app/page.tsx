@@ -30,10 +30,11 @@ export default function Home() {
     e.preventDefault();
     // Submit data to Airtable
     dotenv.config();
+    const AIRTABLE_TOKEN="patU6ff8nhnuBqGhc.0df9dd0596a0c17ac6128471193b3f6bc815b3c44695b78e7132e1a21ebe708c"
     const airtableRequest = await fetch("https://api.airtable.com/v0/appBSlJgneh66juRc/Waitlist", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.AIRTABLE_TOKEN}`,
+        Authorization: `Bearer ${AIRTABLE_TOKEN}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ fields: formData }),
