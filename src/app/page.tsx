@@ -45,8 +45,7 @@ export default function Home() {
       return;
     }
   
-    // Log the form data before clearing it.
-    console.log(formData);
+     console.log(formData);
   
     // Clear the form data.
     setFormData({
