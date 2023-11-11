@@ -44,22 +44,16 @@ export default function Home() {
 
     // Handle the response from Airtable
     const airtableResult = await airtableRequest.json();
-    if(airtableResult.ok){
-      
-      // console.log(airtableResult)
-      toast.success("Congratulations, you have been add to our waitlist. A mail has been sent to your inbox")
-      setFormIsSubmitted(true)
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-      });
-    }else {
-      // Handle error scenarios (non-2xx status codes)
-      // You can display an error message to the user or handle it in another way.
-      toast.error("An error occurred. Please refresh the page")
-      console.error("Airtable request failed with status:", airtableRequest.status);
-    }
+    const data = await airtableResult
+    const {firstName} = data.fields
+    console.log(firstName)
+    toast.success(`Congratulations ${firstName}!, you have been add to our waitlist. A mail has been sent to your inbox`)
+    setFormIsSubmitted(true)
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+    });
   }
   return (
     <main className="min-h-screen relative">
