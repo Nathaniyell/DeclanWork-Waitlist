@@ -44,9 +44,12 @@ export default function Home() {
 
     // Handle the response from Airtable
     const airtableResult = await airtableRequest.json();
-    // console.log(airtableResult)
-    toast.success("Congratulations, you have been add to our waitlist. A mail has been sent to your inbox")
-    setFormIsSubmitted(true)
+    if(airtableResult.status === 200){
+      
+      // console.log(airtableResult)
+      toast.success("Congratulations, you have been add to our waitlist. A mail has been sent to your inbox")
+      setFormIsSubmitted(true)
+    }
     setFormData({
       firstName: "",
       lastName: "",
