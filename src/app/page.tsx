@@ -38,24 +38,17 @@ export default function Home() {
         Authorization: `Bearer ${AIRTABLE_TOKEN}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ "name": formData }),
+      body: JSON.stringify({ fields: formData }),
     });
 
     // Handle the response from Airtable
     const airtableResult = await airtableRequest.json();
     console.log(airtableResult)
-
-    if (airtableResult.data === "ok") {
-      setFormIsSubmitted(true);
-      console.log("request sent")
-
-      // Clear the form data
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-      });
-    }
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+    });
   }
   return (
     <main className="min-h-screen relative">
