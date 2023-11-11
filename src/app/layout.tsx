@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Wait List',
-  description: 'Join out wait list to get notified when we launch',
+  description: 'Join our waitlist to get notified when we launch',
 }
 
 
