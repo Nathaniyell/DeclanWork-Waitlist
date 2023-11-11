@@ -44,6 +44,7 @@ export default function Home() {
     // Handle the response from Airtable
     const airtableResult = await airtableRequest.json();
     console.log(airtableResult)
+    setFormIsSubmitted(true)
     setFormData({
       firstName: "",
       lastName: "",
