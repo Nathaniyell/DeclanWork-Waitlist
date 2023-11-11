@@ -5,6 +5,7 @@ import mockup from "../../public/assets/Images/mockup.png";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { PulseLoader } from "react-spinners";
 
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
     lastName: "",
     email: "",
   });
-  const [formIsSubmitted, setFormIsSubmitted] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -29,7 +30,7 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Submit data to Airtable
+    setIsLoading(true)
     
 
     const AIRTABLE_TOKEN="patU6ff8nhnuBqGhc.b75083765bc53f2b190590d8ec63af0f6c336ecc5903972cc2c8ba471b524709"
@@ -46,9 +47,9 @@ export default function Home() {
     const airtableResult = await airtableRequest.json();
     const data = await airtableResult
     const {firstName} = data.fields
-    console.log(firstName)
-    toast.success(`Congratulations ${firstName}!, you have been add to our waitlist. A mail has been sent to your inbox`)
-    setFormIsSubmitted(true)
+   
+    toast.success(`Congratulations ${firstName} !, you have been add to our waitlist. A mail has been sent to your inbox`)
+   setIsLoading(false)
     setFormData({
       firstName: "",
       lastName: "",
@@ -62,14 +63,7 @@ export default function Home() {
         alt="Logo"
         className="absolute inline left-10 top-4 md:left-20 z-0"
       />
-      {formIsSubmitted && (
-        <p
-          className={`bg-[#0D5EBA] text-center transition-all ease-in py-1 md:py-2 z-10 text-white relative`}
-        >
-          Congratulations, you have been add to our waitlist. A mail has been
-          sent to your inbox
-        </p>
-      )}
+     
       <div className="flex items-center justify-between flex-col lg:flex-row bg-white">
         <form
           onSubmit={handleSubmit}
@@ -137,7 +131,7 @@ export default function Home() {
             required
           />
           <button type="submit" className="rounded-md bg-[#00D37B] w-full p-3 mt-8">
-            Join Waitlist
+          {isLoading? <PulseLoader color="#fff" /> : "Join Waitlist"}
           </button>
         </form>
         <div className="hidden bg-[#EDFCF6] lg:block lg:w-[55%] lg:h-screen relative">
