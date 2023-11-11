@@ -3,7 +3,7 @@ import Image from "next/image";
 import logo from "../../public/assets/Images/logo.png";
 import mockup from "../../public/assets/Images/mockup.png";
 import { useState } from "react";
-import dotenv from 'dotenv';
+
 
 
 export default function Home() {
@@ -29,15 +29,16 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Submit data to Airtable
-    dotenv.config();
-    const AIRTABLE_TOKEN="patU6ff8nhnuBqGhc.0df9dd0596a0c17ac6128471193b3f6bc815b3c44695b78e7132e1a21ebe708c"
+    
+
+    const AIRTABLE_TOKEN="patU6ff8nhnuBqGhc.b75083765bc53f2b190590d8ec63af0f6c336ecc5903972cc2c8ba471b524709"
     const airtableRequest = await fetch("https://api.airtable.com/v0/appBSlJgneh66juRc/Waitlist", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${AIRTABLE_TOKEN}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ fields: formData }),
+      body: JSON.stringify({ person: formData }),
     });
 
     // Handle the response from Airtable
