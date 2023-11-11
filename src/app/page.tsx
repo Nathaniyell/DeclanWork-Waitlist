@@ -5,7 +5,7 @@ import mockup from "../../public/assets/Images/mockup.png";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { PulseLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 
 export default function Home() {
@@ -131,7 +131,7 @@ export default function Home() {
             required
           />
           <button type="submit" className="rounded-md bg-[#00D37B] w-full p-3 mt-8">
-          {isLoading? <PulseLoader color="#fff" /> : "Join Waitlist"}
+          {isLoading? <BeatLoader color="#fff" /> : "Join Waitlist"}
           </button>
         </form>
         <div className="hidden bg-[#EDFCF6] lg:block lg:w-[55%] lg:h-screen relative">
