@@ -61,7 +61,7 @@ export default function Home() {
     });
   };
   return (
-    <main className="min-h-screen relative">
+    <main className="lg:min-h-screen relative">
       <Image
         src={logo}
         alt="Logo"
@@ -71,7 +71,7 @@ export default function Home() {
       <div className="flex items-center justify-between flex-col lg:flex-row bg-white">
         <form
           onSubmit={handleSubmit}
-          className="p-8 flex-1 relative top-20 md:top-14 lg:top-8 mb-10"
+          className="p-8 flex-1 relative top-20 md:top-14 lg:top-8"
         >
           <div className="flex items-start justify-between flex-col h-[150px] md:h-[100px] lg:md:h-[120px] bg-white">
             <span className="bg-[#1671D9] text-white p-1 text-sm rounded-lg md:text-xs">
