@@ -38,11 +38,12 @@ export default function Home() {
         Authorization: `Bearer ${AIRTABLE_TOKEN}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ person: formData }),
+      body: JSON.stringify({ "name": formData }),
     });
 
     // Handle the response from Airtable
     const airtableResult = await airtableRequest.json();
+    console.log(airtableResult)
 
     if (airtableResult.data === "ok") {
       setFormIsSubmitted(true);
