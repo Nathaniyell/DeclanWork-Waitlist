@@ -3,7 +3,8 @@ import Image from "next/image";
 import logo from "../../public/assets/Images/logo.png";
 import mockup from "../../public/assets/Images/mockup.png";
 import { useState } from "react";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Home() {
@@ -43,7 +44,8 @@ export default function Home() {
 
     // Handle the response from Airtable
     const airtableResult = await airtableRequest.json();
-    console.log(airtableResult)
+    // console.log(airtableResult)
+    toast.success("Congratulations, you have been add to our waitlist. A mail has been sent to your inbox")
     setFormIsSubmitted(true)
     setFormData({
       firstName: "",
@@ -80,6 +82,16 @@ export default function Home() {
               Be one of the first to get notified when we launch our Beta
               version
             </p>
+            <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+            />
           </div>
           <section className="mt-8 flex items-center justify-between w-full gap-6 mb-4">
             <div>
